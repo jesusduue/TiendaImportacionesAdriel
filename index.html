@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Importaciones Adriel · Productos Importados 100% Originales de EE.UU.</title>
+  <meta name="description"
+    content="Vitaminas, suplementos, perfumes y gorras importadas 100% originales de EE.UU. Pedidos por encargo de Amazon, Shein y más. Envío seguro y garantía total." />
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23A6856A'/%3E%3Cpath d='M16 18h9l11 26 11-26h9L38 50h-10z' fill='%23FDFCFB'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- ══════════ BARRA FLASH (DESACTIVADA; conservar para uso futuro) ══════════
+<div class="flashbar" id="flashBar">
+  <div class="flashbar-inner">
+    <span class="flash-ico">⚡</span>
+    <p class="flash-text">
+      <strong>OFERTA RELÁMPAGO</strong> · Hasta <strong>-30%</strong> en suplementos, perfumes y gorras seleccionadas
+      <span class="flash-timer" id="flashTimer" aria-live="polite">04h 12m 00s</span>
+    </p>
+    <a href="#tienda" class="flash-cta">Aprovechar ahora →</a>
+  </div>
+</div> -->
+
+  <!-- ══════════ HEADER ══════════ -->
+  <header id="siteHeader" class="hdr">
+    <div class="hdr-inner">
+      <a href="#" class="brand" aria-label="Importaciones Adriel inicio">
+        <span class="brand-mark">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <defs>
+              <linearGradient id="lgBrand" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#FAF8F7" />
+                <stop offset="1" stop-color="#E7E3E0" />
+              </linearGradient>
+            </defs>
+            <path d="M14 14h10l10 26 10-26h10L38 52h-12z" fill="url(#lgBrand)" />
+            <circle cx="50" cy="13" r="5" fill="rgba(255,255,255,.55)" />
+            <circle cx="14" cy="13" r="3" fill="rgba(255,255,255,.4)" />
+          </svg>
+        </span>
+        <span class="brand-text">Importaciones Adriel<small>Importados EE.UU. · 100% Originales</small></span>
+      </a>
+
+      <nav class="nav-desktop" id="navDesktop" aria-label="Categorías">
+        <button class="nav-link is-active" data-cat="all">Todos</button>
+        <button class="nav-link" data-cat="suplementos">Salud &amp; Suplementos</button>
+        <button class="nav-link" data-cat="perfumes">Perfumes</button>
+        <button class="nav-link" data-cat="gorras">Gorras</button>
+        <!--   <a class="nav-link" href="#encargos">Encargos</a> -->
+      </nav>
+
+      <div class="hdr-actions">
+        <label class="search-desktop">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M10 4a6 6 0 105.2 9l4.3 4.3 1.4-1.4L16.6 11.6A6 6 0 0010 4zm0 2a4 4 0 110 8 4 4 0 010-8z" />
+          </svg>
+          <input id="searchDesktop" type="search" placeholder="Buscar marca, producto o beneficio…"
+            autocomplete="off" />
+        </label>
+        <button id="cartBtn" class="icon-btn" aria-label="Abrir carrito">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M7 4h-2l-.6 2H3l3.6 11.2A3 3 0 009.5 19h9a3 3 0 002.9-2.2L23 8H6.2L7 4zm3.2 17.2a1.3 1.3 0 100-2.6 1.3 1.3 0 000 2.6zm7.6 0a1.3 1.3 0 100-2.6 1.3 1.3 0 000 2.6z" />
+          </svg>
+          <span class="cart-badge" id="cartBadge" style="display:none">0</span>
+        </button>
+        <button id="adminBtn" class="icon-btn" aria-label="Panel administrativo" title="Panel Admin">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M12 8.5A3.5 3.5 0 1015.5 12 3.5 3.5 0 0012 8.5zm9 4.9V10.6l-2.2-.4a7.6 7.6 0 00-.8-1.9l1.3-1.8-2-2-1.8 1.3a7.6 7.6 0 00-1.9-.8L13.4 3h-2.8l-.4 2.2a7.6 7.6 0 00-1.9.8L6.5 4.7l-2 2L5.8 8.5a7.6 7.6 0 00-.8 1.9l-2.2.4v2.8l2.2.4a7.6 7.6 0 00.8 1.9l-1.3 1.8 2 2 1.8-1.3a7.6 7.6 0 001.9.8l.4 2.2h2.8l.4-2.2a7.6 7.6 0 001.9-.8l1.8 1.3 2-2-1.3-1.8a7.6 7.6 0 00.8-1.9z" />
+          </svg>
+        </button>
+        <button id="menuBtn" class="icon-btn" aria-label="Menú" aria-expanded="false" style="display:flex"
+          aria-controls="mobileNav">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav" style="display:none" aria-label="Categorías móvil">
+      <button class="nav-link is-active" data-cat="all">Todos</button>
+      <button class="nav-link" data-cat="suplementos">💊 Suplementos</button>
+      <button class="nav-link" data-cat="perfumes">🌸 Perfumes</button>
+      <button class="nav-link" data-cat="gorras">🧢 Gorras</button>
+      <!-- <a class="nav-link" href="#encargos">📦 Encargos</a> -->
+    </nav>
+  </header>
+
+  <!-- ══════════ HERO ══════════ -->
+  <section class="hero" aria-label="Bienvenida">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <span class="pill"><span class="dot"></span>🇺🇸 Importados directos de EE.UU.</span>
+        <h1>Recupera tu <em>vitalidad</em>,<br>eleva tu <em>estilo</em>.</h1>
+        <p>Vitaminas, suplementos, perfumes y gorras 100% originales importados de EE.UU.</p><!-- Además, gestionamos tus
+          pedidos por encargo de Amazon, Shein y más. -->
+        <div class="hero-ctas">
+          <a href="#tienda" class="btn btn-primary btn-lg">Ver catálogo →</a>
+          <!--  <a href="#encargos" class="btn btn-ghost btn-lg">Hacer un encargo</a> -->
+        </div>
+        <ul class="hero-points" aria-label="Garantías">
+          <li><svg viewBox="0 0 20 20">
+              <path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm-1.4 11.4L5.2 10l1.4-1.4 2 2 4.8-4.8 1.4 1.4z" />
+            </svg>100% originales, sellados de fábrica</li>
+          <!-- <li><svg viewBox="0 0 20 20">
+              <path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm-1.4 11.4L5.2 10l1.4-1.4 2 2 4.8-4.8 1.4 1.4z" />
+            </svg>Gestión de encargos Amazon, Shein y más</li> -->
+          <li><svg viewBox="0 0 20 20">
+              <path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm-1.4 11.4L5.2 10l1.4-1.4 2 2 4.8-4.8 1.4 1.4z" />
+            </svg>Envío discreto y seguro · Garantía total</li>
+        </ul>
+      </div>
+      <div class="hero-art" id="heroArt" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- ══════════ TRUST STRIP ══════════ -->
+  <div class="trust-strip" role="list" aria-label="Nuestras garantías">
+    <div class="trust-item" role="listitem">
+      <span class="trust-ico" aria-hidden="true">🛡️</span>
+      <div><strong>100% Originales</strong><small>Sellados de fábrica. Cero réplicas.</small></div>
+    </div>
+    <div class="trust-item" role="listitem">
+      <span class="trust-ico" aria-hidden="true">🚚</span>
+      <div><strong>Envío Discreto</strong><small>Empaque neutro. Tu privacidad importa.</small></div>
+    </div>
+    <!--  <div class="trust-item" role="listitem">
+      <span class="trust-ico" aria-hidden="true">📦</span>
+      <div><strong>Pedidos por Encargo</strong><small>Amazon, Shein, eBay y más.</small></div>
+    </div> -->
+    <div class="trust-item" role="listitem">
+      <span class="trust-ico" aria-hidden="true">💬</span>
+      <div><strong>Atención WhatsApp</strong><small>Respuesta rápida y asesoría personalizada.</small></div>
+    </div>
+  </div>
+
+  <!-- ══════════ TIENDA ══════════ -->
+  <section id="tienda" class="shop" aria-label="Catálogo de productos">
+    <div class="shop-head">
+      <div>
+        <h2 class="section-title">Nuestro <span>Catálogo</span></h2>
+        <p class="section-sub" id="resultCount">Cargando productos…</p>
+      </div>
+      <div class="sort-wrap">
+        <label for="sortSelect">Ordenar:</label>
+        <select id="sortSelect" class="select">
+          <option value="relevance">Relevancia</option>
+          <option value="price-asc">Precio: menor a mayor</option>
+          <option value="price-desc">Precio: mayor a menor</option>
+          <option value="rating">Mejor calificados</option>
+          <option value="sold">Más vendidos</option>
+          <!-- <option value="discount">Mayor descuento</option> -->
+        </select>
+      </div>
+    </div>
+
+    <!-- Toolbar de filtros -->
+    <div class="toolbar" role="search" aria-label="Filtros">
+      <!-- Búsqueda móvil -->
+      <div class="search-mobile">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M10 4a6 6 0 105.2 9l4.3 4.3 1.4-1.4L16.6 11.6A6 6 0 0010 4zm0 2a4 4 0 110 8 4 4 0 010-8z" />
+        </svg>
+        <input id="searchMobile" type="search" placeholder="Buscar productos…" autocomplete="off" aria-label="Buscar" />
+      </div>
+
+      <!-- Chips de categoría -->
+      <div class="chips" role="group" aria-label="Filtrar por categoría">
+        <button class="chip is-active" data-cat="all">Todos <span class="chip-n" data-count="all">0</span></button>
+        <button class="chip" data-cat="suplementos">💊 Suplementos <span class="chip-n"
+            data-count="suplementos">0</span></button>
+        <button class="chip" data-cat="perfumes">🌸 Perfumes <span class="chip-n"
+            data-count="perfumes">0</span></button>
+        <button class="chip" data-cat="gorras">🧢 Gorras <span class="chip-n" data-count="gorras">0</span></button>
+      </div>
+
+      <!-- Filtro de precio -->
+      <div class="price-filter" role="group" aria-label="Rango de precio">
+        <div class="price-filter-head">
+          <span>Rango de precio</span>
+          <strong id="priceLabel">$0.00 — $400.00</strong>
+        </div>
+        <div class="range-row">
+          <input type="range" id="priceMin" min="0" max="400" step="5" value="0" aria-label="Precio mínimo" />
+          <input type="range" id="priceMax" min="0" max="400" step="5" value="400" aria-label="Precio máximo" />
+        </div>
+        <div class="quick-ranges" id="quickRanges" role="group" aria-label="Rangos rápidos">
+          <button class="mini-chip" data-min="0" data-max="15">Hasta $15</button>
+          <button class="mini-chip" data-min="0" data-max="30">Hasta $30</button>
+          <button class="mini-chip" data-min="30" data-max="100">$30 - $100</button>
+          <button class="mini-chip" data-min="100" data-max="400">+$100</button>
+          <button class="mini-chip" id="clearFilters">Limpiar ✕</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grid de productos -->
+    <div id="productGrid" class="grid-products" role="list" aria-label="Productos"></div>
+
+    <!-- Estado vacío -->
+    <div id="emptyState" class="hidden" role="status">
+      <span aria-hidden="true">🔍</span>
+      <h3>Sin resultados</h3>
+      <p>No encontramos productos con tu búsqueda o filtros aplicados.</p>
+      <button class="btn btn-ghost" id="emptyReset">Limpiar filtros</button>
+    </div>
+
+    <!-- Combo banner (DESACTIVADO; conservar para uso futuro)
+  <div class="combo-banner" id="comboBanner" aria-label="Oferta combo">
+    <div class="combo-glow" aria-hidden="true"></div>
+    <div class="combo-copy">
+      <span class="combo-tag">🎁 Combo Especial</span>
+      <h3>Lleva 2 suplementos y obtén <strong id="comboDiscLabel">15%</strong> de descuento</h3>
+      <p>Combina cualquier suplemento de nuestro catálogo. El descuento se aplica automáticamente al agregar al carrito.</p>
+    </div>
+    <a href="#tienda" class="btn btn-primary" data-cat="suplementos">Ver suplementos →</a>
+  </div> -->
+  </section>
+
+  <!-- ══════════ PEDIDOS POR ENCARGO ══════════ -->
+  <!-- <section id="encargos" class="encargos-section" aria-label="Pedidos por encargo">
+  <div class="encargos-inner">
+    <div class="encargo-copy">
+      <span class="pill" style="margin-bottom:1rem;"><span class="dot"></span>Nuevo servicio</span>
+      <h2>¿Viste algo en <em>Amazon</em> o <em>Shein</em>?</h2>
+      <p>Te lo traemos. Gestionamos pedidos por encargo desde las principales plataformas de EE.UU. y el mundo. Solo comparte el link del producto y nosotros nos encargamos de todo.</p>
+      <div class="platform-pills" role="list" aria-label="Plataformas disponibles">
+        <span class="plat-pill" role="listitem">🛍️ Amazon</span>
+        <span class="plat-pill" role="listitem">👗 Shein</span>
+        <span class="plat-pill" role="listitem">🛒 eBay</span>
+        <span class="plat-pill" role="listitem">🏪 Walmart</span>
+        <span class="plat-pill" role="listitem">💄 iHerb</span>
+        <span class="plat-pill" role="listitem">📦 Y más...</span>
+      </div>
+      <ul class="hero-points" style="margin-top:1.5rem;" aria-label="Cómo funciona">
+        <li><svg viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm-1.4 11.4L5.2 10l1.4-1.4 2 2 4.8-4.8 1.4 1.4z"/></svg>Comparte el link del producto</li>
+        <li><svg viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm-1.4 11.4L5.2 10l1.4-1.4 2 2 4.8-4.8 1.4 1.4z"/></svg>Te damos el precio final con envío incluido</li>
+        <li><svg viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm-1.4 11.4L5.2 10l1.4-1.4 2 2 4.8-4.8 1.4 1.4z"/></svg>Confirmamos y te entregamos en tu puerta</li>
+      </ul>
+    </div>
+
+    <div class="encargo-form-card">
+      <h3>📦 Solicitar un encargo</h3>
+      <form id="encargoForm" class="form-grid" novalidate>
+        <div class="field">
+          <label for="encNombre">Tu nombre completo *</label>
+          <input class="input" id="encNombre" name="nombre" placeholder="Ej. María González" autocomplete="name" />
+          <span class="err-msg hidden" data-err-enc="nombre">Ingresa tu nombre (mín. 3 caracteres).</span>
+        </div>
+        <div class="field">
+          <label for="encTelefono">WhatsApp / Teléfono *</label>
+          <input class="input" id="encTelefono" name="telefono" inputmode="tel" placeholder="Ej. +58 412-000-0000" autocomplete="tel" />
+          <span class="err-msg hidden" data-err-enc="telefono">Teléfono inválido (mín. 7 dígitos).</span>
+        </div>
+        <div class="field">
+          <label for="encLink">Link del producto *</label>
+          <input class="input" id="encLink" name="link" type="url" placeholder="https://www.amazon.com/dp/..." />
+          <span class="err-msg hidden" data-err-enc="link">Pega el link completo del producto.</span>
+        </div>
+        <div class="form-2">
+          <div class="field">
+            <label for="encPlataforma">Plataforma</label>
+            <select class="select" id="encPlataforma" name="plataforma">
+              <option value="Amazon">Amazon</option>
+              <option value="Shein">Shein</option>
+              <option value="eBay">eBay</option>
+              <option value="Walmart">Walmart</option>
+              <option value="iHerb">iHerb</option>
+              <option value="Otra">Otra</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="encCantidad">Cantidad</label>
+            <input class="input" id="encCantidad" name="cantidad" type="number" min="1" max="50" value="1" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="encNotas">Detalles adicionales (color, talla, variante…)</label>
+          <textarea class="textarea" id="encNotas" name="notas" rows="2" placeholder="Talla M, color azul, modelo 2024…"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block btn-lg">
+          <svg viewBox="0 0 32 32" style="width:18px;height:18px;fill:currentColor"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.5.7 4.8 2 6.8L3 29l6.9-2.4c1.8 1 3.9 1.6 6.1 1.6 7 0 12.5-5.5 12.5-12.5S23 3 16 3z"/></svg>
+          Enviar solicitud por WhatsApp
+        </button>
+        <p style="font-size:.74rem;color:var(--clay);text-align:center;margin:0">Tu solicitud se enviará directamente por WhatsApp. Sin pagos por adelantado.</p>
+      </form>
+    </div>
+  </div>
+</section> -->
+
+  <!-- ══════════ TESTIMONIOS ══════════ -->
+  <!-- <section id="testimonios" class="testimonios-section" aria-label="Testimonios de clientes">
+  <div class="testimonios-inner">
+    <div class="section-header">
+      <p class="eyebrow">Prueba social</p>
+      <h2>Miles ya confían en nosotros</h2>
+    </div>
+    <div class="testimonios-grid">
+      <article class="testi-card">
+        <div class="testi-stars" aria-label="5 estrellas">★★★★★</div>
+        <p class="testi-text">"Recibí mi pedido en 24h, todo perfectamente empacado. El perfume importado original se nota desde el primer uso. ¡100% recomendado!"</p>
+        <div class="testi-author">
+          <img src="https://i.pravatar.cc/80?img=32" class="testi-avatar" alt="María G." loading="lazy" width="42" height="42" />
+          <div><strong>María G.</strong><span>Cliente verificada ✓</span></div>
+        </div>
+      </article>
+      <article class="testi-card">
+        <div class="testi-stars" aria-label="5 estrellas">★★★★★</div>
+        <p class="testi-text">"Las vitaminas llegaron selladas y con factura de importación. Se nota que son legítimas. Ya hice mi tercer pedido. Envío súper rápido."</p>
+        <div class="testi-author">
+          <img src="https://i.pravatar.cc/80?img=12" class="testi-avatar" alt="Carlos R." loading="lazy" width="42" height="42" />
+          <div><strong>Carlos R.</strong><span>Cliente verificado ✓</span></div>
+        </div>
+      </article>
+      <article class="testi-card">
+        <div class="testi-stars" aria-label="5 estrellas">★★★★★</div>
+        <p class="testi-text">"Pedí un encargo de Amazon y fue súper fácil. Me mandaron el precio en minutos y en 2 semanas ya tenía mi producto en casa. Excelente servicio."</p>
+        <div class="testi-author">
+          <img src="https://i.pravatar.cc/80?img=45" class="testi-avatar" alt="Andrea P." loading="lazy" width="42" height="42" />
+          <div><strong>Andrea P.</strong><span>Cliente verificada ✓</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section> -->
+
+  <!-- ══════════ CTA FINAL ══════════ -->
+  <section class="cta-section" aria-label="Llamada a la acción">
+    <div class="cta-box">
+      <div class="cta-inner">
+        <h2>Tu bienestar empieza hoy</h2>
+        <p>Explora nuestro catálogo o solicita un encargo personalizado. Respondemos en minutos por WhatsApp.</p>
+        <div class="cta-btns">
+          <a href="#tienda" class="btn"
+            style="background:rgba(255,255,255,.95);color:var(--sand-2);font-weight:900;">Ver catálogo →</a>
+          <!--   <a href="#encargos" class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.5);">Hacer un
+            encargo</a> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <footer id="contacto" class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div>
+        <div class="brand" style="margin-bottom:.6rem;">
+          <span class="brand-mark" style="width:34px;height:34px;border-radius:10px;">
+            <svg viewBox="0 0 64 64" style="width:20px;height:20px;" aria-hidden="true">
+              <path d="M14 14h10l10 26 10-26h10L38 52h-12z" fill="white" />
+            </svg>
+          </span>
+          <span class="brand-text" style="font-size:.9rem;letter-spacing:.12em;">Importaciones Adriel</span>
+        </div>
+        <p class="footer-desc">Vitaminas, perfumes, gorras y pedidos por encargo. Todo importado 100% original de EE.UU.
+          con envío seguro y garantía total.</p>
+      </div>
+      <div>
+        <h4>Catálogo</h4>
+        <a href="#tienda" class="footer-link" data-cat="suplementos">💊 Suplementos</a>
+        <a href="#tienda" class="footer-link" data-cat="perfumes">🌸 Perfumes</a>
+        <a href="#tienda" class="footer-link" data-cat="gorras">🧢 Gorras</a>
+        <a href="#encargos" class="footer-link">📦 Pedidos por encargo</a>
+      </div>
+      <div>
+        <h4>Información</h4>
+        <a href="#testimonios" class="footer-link">Testimonios</a>
+        <a href="#" class="footer-link">Política de devoluciones</a>
+        <a href="#" class="footer-link">Garantías y autenticidad</a>
+        <a href="#contacto" class="footer-link">Contacto</a>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <a id="footerWhats" href="#" class="footer-link" target="_blank" rel="noopener">💬 WhatsApp</a>
+        <span class="footer-link" style="cursor:default">📞 +58 412-000-0000</span>
+        <span class="footer-link" style="cursor:default">📧 hola@importacionesadriel.com</span>
+        <span class="footer-link" style="cursor:default">🕐 Lun-Sáb 8am-8pm</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Importaciones Adriel. Todos los derechos reservados. 🇺🇸 Importado de EE.UU.</p>
+      <button class="footer-admin" id="adminBtnFooter" aria-label="Acceso administrativo">⚙ Panel Admin</button>
+    </div>
+  </footer>
+
+  <!-- ══════════ OVERLAY ══════════ -->
+  <div class="overlay" id="overlay" aria-hidden="true"></div>
+
+  <!-- ══════════ DRAWER CARRITO ══════════ -->
+  <aside class="drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Carrito de compras">
+    <div class="drawer-head">
+      <div>
+        <h3>🛒 Mi Carrito</h3>
+        <p id="drawerCount">0 productos</p>
+      </div>
+      <button class="close-btn" data-close="cartDrawer" aria-label="Cerrar carrito">✕</button>
+    </div>
+
+    <div id="shipProgress" class="ship-progress">
+      <p id="shipMsg">¡Agrega <strong>$100.00</strong> más para obtener <strong>ENVÍO GRATIS</strong>!</p>
+      <div class="bar" id="shipBarWrap"><span id="shipBar"></span></div>
+    </div>
+
+    <div class="drawer-body" id="cartItems"></div>
+
+    <div class="drawer-empty hidden" id="cartEmpty">
+      <span aria-hidden="true">🛒</span>
+      <h4>Tu carrito está vacío</h4>
+      <p>Agrega productos para comenzar tu pedido.</p>
+      <button class="btn btn-primary" data-close="cartDrawer">Explorar catálogo</button>
+    </div>
+
+    <div class="drawer-foot" id="cartFoot">
+      <div id="comboNote" class="combo-note hidden"></div>
+      <div class="sum-row"><span>Subtotal</span><strong id="sumSubtotal">$0.00</strong></div>
+      <div class="sum-row discount" id="rowCombo" style="display:none"><span>Descuento combo</span><strong
+          id="sumCombo">-$0.00</strong></div>
+      <div class="sum-row"><span>Envío <small>(gratis en todos los pedidos)</small></span><strong
+          id="sumShip">$0.00</strong></div>
+      <div class="sum-row total"><span>Total</span><strong id="sumTotal">$0.00</strong></div>
+      <button class="btn btn-primary btn-block btn-lg" id="goCheckout">Finalizar pedido por WhatsApp</button>
+    </div>
+  </aside>
+
+  <!-- ══════════ MODAL VISTA RÁPIDA ══════════ -->
+  <div class="modal" id="quickModal" role="dialog" aria-modal="true" aria-label="Vista rápida del producto">
+    <div class="modal-card modal-lg">
+      <button class="close-btn abs" data-close="quickModal" aria-label="Cerrar">✕</button>
+      <div id="quickBody"></div>
+    </div>
+  </div>
+
+  <!-- ══════════ MODAL CHECKOUT ══════════ -->
+  <div class="modal" id="checkoutModal" role="dialog" aria-modal="true" aria-label="Finalizar pedido">
+    <div class="modal-card modal-lg">
+      <button class="close-btn abs" data-close="checkoutModal" aria-label="Cerrar">✕</button>
+      <div id="checkoutBody"></div>
+    </div>
+  </div>
+
+  <!-- ══════════ PANTALLA ADMIN ══════════ -->
+  <div id="adminView" class="hidden"
+    style="background:var(--bg, #FDFCFB); min-height:100vh; height:100vh; overflow-y:auto; position:fixed; top:0; left:0; right:0; z-index:99999; padding:2rem 1rem;">
+    <div style="max-width: 1200px; margin: 0 auto; position: relative;">
+      <button class="btn btn-ghost" data-close-admin aria-label="Cerrar panel" style="margin-bottom: 1rem;">← Volver a
+        la tienda</button>
+      <div id="adminBody"></div>
+    </div>
+  </div>
+
+  <!-- ══════════ MODAL PIN ══════════ -->
+  <div class="modal" id="pinModal" role="dialog" aria-modal="true" aria-label="Acceso admin">
+    <div class="modal-card modal-sm">
+      <button class="close-btn abs" data-close="pinModal" aria-label="Cerrar">✕</button>
+      <div class="p-6 sm:p-8 text-center" style="padding:2rem 1.5rem;text-align:center;">
+        <span class="pin-lock" aria-hidden="true">🔐</span>
+        <h3 style="font-size:1.2rem;font-weight:900;margin:.8rem 0 .4rem;color:var(--ink);">Acceso restringido</h3>
+        <p style="font-size:.85rem;color:var(--clay);margin:0 0 1.2rem;">Ingresa el PIN del administrador.</p>
+        <input id="pinInput" type="password" inputmode="numeric" maxlength="8" class="input"
+          style="text-align:center;font-size:1.4rem;letter-spacing:.5em;" placeholder="••••" aria-label="PIN" />
+        <p class="pin-error hidden" id="pinError">PIN incorrecto. Intenta de nuevo.</p>
+        <button class="btn btn-primary btn-block" id="pinSubmit" style="margin-top:1rem;">Entrar al panel</button>
+        <!-- <p style="font-size:.72rem;color:var(--stone);margin-top:.8rem;">PIN de demostración: <strong style="color:var(--sand-2);">1234</strong></p> -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════ PRUEBA SOCIAL ══════════ -->
+  <!-- <div class="proof" id="proofBox" aria-live="polite" aria-label="Actividad reciente"></div> -->
+
+  <!-- ══════════ TOASTS ══════════ -->
+  <div class="toasts" id="toastBox" aria-live="polite" aria-label="Notificaciones"></div>
+
+  <!-- ══════════ WHATSAPP FLOTANTE ══════════ -->
+  <a href="#" id="waFloat" class="wa-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path
+        d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.5.7 4.8 2 6.8L3 29l6.9-2.4c1.8 1 3.9 1.6 6.1 1.6 7 0 12.5-5.5 12.5-12.5S23 3 16 3zm0 22.6c-2 0-3.9-.6-5.5-1.6l-.4-.2-4.1 1.4 1.4-4-.3-.4a10 10 0 1118.9-5.3c0 5.5-4.5 10.1-10 10.1zm5.6-7.4c-.3-.2-1.8-.9-2.1-1s-.5-.2-.7.1-.8 1-1 1.2-.4.2-.7.1a8.2 8.2 0 01-2.4-1.5 9 9 0 01-1.7-2.1c-.2-.3 0-.5.1-.6l.5-.6.3-.5v-.5l-1-2.2c-.2-.5-.5-.5-.7-.5h-.6a1.2 1.2 0 00-.9.4A3.6 3.6 0 009.5 13c0 1.5 1.1 3 1.3 3.2s2.2 3.5 5.4 4.8c2 .8 2.8.9 3.8.8.6-.1 1.8-.7 2-1.4s.3-1.3.2-1.4z" />
+    </svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
