@@ -356,7 +356,9 @@
     const items = st.cart.map(i => { const p = getProduct(i.id); return { id: p.id, name: p.name, brand: p.brand, price: p.price, qty: i.qty, cat: p.cat, visual: p.visual, tone: p.tone, image: p.image }; });
     const order = { code: 'TS-' + String(Date.now()).slice(-6), ts: Date.now(), client: data, items, subtotal: t.subtotal, combo: t.combo, shipping: t.shipping, total: t.total, status: TA.ORDER_STATUS[0] };
     items.forEach(i => { const p = getProduct(i.id); if (p) { p.stock = Math.max(0, p.stock - i.qty); p.sold = (p.sold || 0) + i.qty; } });
-    st.orders.unshift(order); st.cart = [];
+    st.orders.unshift(order);
+    TA.registerClient(data, order); // alta/actualización del cliente en el registro
+    st.cart = [];
     TA.saveProducts(); TA.saveOrders(); TA.saveCart();
     const url = TA.waLink(TA.buildMessage(order)); $('#waFloat').href = url; window.open(url, '_blank', 'noopener');
     renderCart(); updateBadge(); renderCatalog();

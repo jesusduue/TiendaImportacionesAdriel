@@ -1,0 +1,9 @@
+{
+  "meta": {
+    "store": "Importaciones Adriel",
+    "version": 1,
+    "updatedAt": "2026-09-19T12:00:00.000Z",
+    "notes": "Registro de clientes de la tienda. Se llena automáticamente cada vez que un cliente realiza un pedido. Gestiona la lista desde admin.html (pestaña Clientes) y publica cambios con 'Exportar', reemplazando este archivo."
+  },
+  "clients": []
+}

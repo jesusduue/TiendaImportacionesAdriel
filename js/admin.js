@@ -8,6 +8,9 @@
    - CRUD de productos (crear, editar, duplicar, activar, borrar,
      edición rápida de precio/stock)
    - Gestión de pedidos y encargos (estado, WhatsApp, exportar)
+   - Registro de clientes: pestaña Clientes (se dan de alta
+     automáticamente con cada pedido) y exportar/importar
+     data/clientes.json
    - Ajustes de la tienda (WhatsApp, PIN…)
    - Catálogo como BD JSON: exportar / importar / restaurar desde
      data/productos.json
@@ -71,18 +74,19 @@
   /* ══════════ 3. RENDER PRINCIPAL ══════════ */
   function renderAdmin() {
     const m = metrics();
-    const tabs = [['dash', '📊 Métricas'], ['prods', '📦 Productos'], ['orders', '🧾 Pedidos'], ['encargos', '📬 Encargos'], ['set', '⚙️ Ajustes']];
+    const tabs = [['dash', '📊 Métricas'], ['prods', '📦 Productos'], ['orders', '🧾 Pedidos'], ['clients', '👥 Clientes'], ['encargos', '📬 Encargos'], ['set', '⚙️ Ajustes']];
     $('#adminBody').innerHTML = `
       <div class="adm-head">
         <div><h3>Panel Administrativo · ${esc(S().settings.store)}</h3><p>Control total del catálogo, pedidos, encargos y métricas.</p></div>
         <div style="display:flex;gap:.5rem;flex-wrap:wrap">
           <span class="badge badge-limited">${S().products.length} productos</span>
           <span class="badge badge-off">${S().orders.length} pedidos</span>
+          <span class="badge badge-new">${S().clients.length} clientes</span>
           <span class="badge badge-new">${S().encargos.length} encargos</span>
         </div>
       </div>
       <div class="adm-tabs">${tabs.map(t => `<button class="adm-tab ${uiTab === t[0] ? 'is-active' : ''}" data-tab="${t[0]}">${t[1]}</button>`).join('')}</div>
-      <div class="adm-body">${uiTab === 'dash' ? tabDash(m) : uiTab === 'prods' ? tabProducts() : uiTab === 'orders' ? tabOrders() : uiTab === 'encargos' ? tabEncargos() : tabSettings()}</div>`;
+      <div class="adm-body">${uiTab === 'dash' ? tabDash(m) : uiTab === 'prods' ? tabProducts() : uiTab === 'orders' ? tabOrders() : uiTab === 'clients' ? tabClients() : uiTab === 'encargos' ? tabEncargos() : tabSettings()}</div>`;
   }
 
   function tabDash(m) {
@@ -130,7 +134,7 @@
             </div>
             <div class="form-2">
               <div class="field"><label>Tono color</label><select class="select" name="tone">${Object.keys(ArtEngine.TONES).map(k => `<option value="${k}" ${v.tone === k ? 'selected' : ''}>${k}</option>`).join('')}</select></div>
-              <div class="field"><label>Imagen URL o ruta (opcional)</label><input class="input" name="image" value="${esc(v.image || '')}" placeholder="ej: imgProductos/producto.jpg o https://..."></div>
+              <div class="field"><label>Imagen URL o ruta (opcional)</label><input type class="input" name="image" value="${esc(v.image || '')}" placeholder="ej: imgProductos/producto.jpg o https://..."></div>
             </div>
             <div class="field"><label>Beneficio (copy) *</label><textarea class="textarea" name="benefit" placeholder="Recupera tu vitalidad…">${esc(v.benefit)}</textarea></div>
             <div class="field"><label>Descripción</label><textarea class="textarea" name="desc">${esc(v.desc || '')}</textarea></div>
@@ -249,7 +253,35 @@
     return rows.map(r => r.map(q).join(',')).join('\n');
   }
 
-  /* ══════════ 6. ENCARGOS ══════════ */
+  /* ══════════ 6. CLIENTES ══════════ */
+  function tabClients() {
+    const st = S();
+    if (!st.clients.length) return `<div class="panel"><h4>👥 Clientes</h4><p style="color:var(--clay);font-size:.86rem;margin:0">Todavía no hay clientes registrados. Cada vez que un cliente realice un pedido en la tienda, sus datos se cargarán aquí automáticamente.</p></div>`;
+    const rows = st.clients.map(c => `
+      <tr>
+        <td><span class="t-name">${esc(c.name)}</span><br><span class="t-brand">📞 ${esc(c.phone)}</span>${c.address ? `<br><span class="t-brand">📍 ${esc(c.address)}</span>` : ''}</td>
+        <td><span class="badge badge-limited">${c.pedidos}</span></td>
+        <td><strong style="color:var(--sand-2)">${money(c.totalGastado)}</strong></td>
+        <td><span class="t-brand">${c.lastOrderCode ? esc(c.lastOrderCode) + ' · ' + fmtDate(c.lastOrderAt) : '—'}</span></td>
+        <td><div style="display:flex;gap:.35rem">
+          <a class="icon-mini" href="${TA.waLink('¡Hola ' + c.name + '! Saludos de ' + S().settings.store + '.')}" target="_blank" rel="noopener" title="WhatsApp">💬</a>
+          <button class="icon-mini del" data-delclient="${esc(c.id)}" title="Eliminar">🗑️</button>
+        </div></td>
+      </tr>`).join('');
+    return `<div class="panel"><h4>👥 Clientes registrados (${st.clients.length})
+      <span style="margin-left:auto;display:flex;gap:.4rem">
+        <button class="btn btn-ghost btn-sm" id="exportClientes">⬇ Exportar</button>
+        <button class="btn btn-ghost btn-sm" id="importClientes">⬆ Importar</button>
+      </span></h4>
+      <div class="table-wrap scroll-slim" style="max-height:64vh;overflow-y:auto">
+        <table class="adm-table"><thead><tr><th>Cliente</th><th>Pedidos</th><th>Total gastado</th><th>Último pedido</th><th></th></tr></thead>
+        <tbody>${rows}</tbody></table>
+      </div>
+      <p style="font-size:.74rem;color:var(--stone);margin:.8rem 0 0">Los clientes se registran automáticamente con cada pedido. Usa <em>Exportar</em> para generar <strong>clientes.json</strong> y reemplazar <code>data/clientes.json</code> en tu hosting.</p>
+    </div>`;
+  }
+
+  /* ══════════ 7. ENCARGOS ══════════ */
   function tabEncargos() {
     const st = S();
     if (!st.encargos.length) return `<div class="panel"><h4>📬 Encargos</h4><p style="color:var(--clay);font-size:.86rem;margin:0">Aún no hay solicitudes de encargo registradas. Las solicitudes enviadas por el formulario aparecerán aquí.</p></div>`;
@@ -273,7 +305,7 @@
       </div></div>`;
   }
 
-  /* ══════════ 7. AJUSTES + MANTENIMIENTO ══════════ */
+  /* ══════════ 8. AJUSTES + MANTENIMIENTO ══════════ */
   function catalogStatusHTML() {
     const st = S();
     const src = { json: '📄 data/productos.json', local: '💾 copia local', legacy: '🗄️ versión anterior' }[st.catalogSource] || '—';
@@ -326,7 +358,6 @@
         <p style="font-size:.74rem;color:var(--stone);margin:.8rem 0 0">Flujo de publicación: edita aquí → <em>Exportar</em> → reemplaza <code>data/productos.json</code> en tu hosting → todos los visitantes reciben la nueva versión automáticamente.</p>
       </div>
       <div class="panel"><h4>🧰 Mantenimiento</h4>
-        <div class="switch-row"><span>Generar pedidos de demostración</span><button class="btn btn-ghost btn-sm" id="seedOrders2">Generar</button></div>
         <div class="switch-row"><span>Exportar pedidos en JSON</span><button class="btn btn-ghost btn-sm" id="exportOrders">Exportar</button></div>
         <div class="switch-row" style="border:0"><span>Eliminar todos los pedidos</span><button class="btn btn-danger btn-sm" id="clearOrders">Eliminar</button></div>
       </div>
@@ -353,6 +384,19 @@
     reader.readAsText(file);
   }
 
+  function importClientes(file) {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const res = TA.importClientesJSON(String(reader.result));
+      if (!res.ok) { toast(res.error, 'err'); return; }
+      const added = TA.mergeClientes(res.clients, String(Date.now()));
+      renderAdmin();
+      toast('✓ Clientes importados: ' + added + ' nuevos de ' + res.clients.length + ' del archivo', 'ok');
+    };
+    reader.onerror = () => toast('No se pudo leer el archivo', 'err');
+    reader.readAsText(file);
+  }
+
   async function resetCatalog() {
     if (!confirm('Se descartarán los cambios locales y se restaurará el catálogo desde data/productos.json. ¿Continuar?')) return;
     try {
@@ -368,22 +412,6 @@
     }
   }
 
-  function demoOrders() {
-    const prods = S().products;
-    if (!prods.length) return [];
-    const mk = (idx, mins, status, name, city) => {
-      const items = idx.map(i => { const p = prods[i % prods.length]; return { id: p.id, name: p.name, brand: p.brand, price: p.price, qty: 1 + (i % 2), cat: p.cat, visual: p.visual, tone: p.tone }; });
-      const subtotal = items.reduce((s, i) => s + i.price * i.qty, 0);
-      return { code: 'TS-' + String(1000 + idx[0] * 7 + mins).slice(-4), ts: Date.now() - mins * 60000, client: { name, phone: '3' + (10 + idx[0]) + '555' + (100 + idx[0]), address: 'Calle ' + (10 + idx[0]) + ' # ' + (20 + idx[0]) + '-' + idx[0] + ', ' + city, notes: '' }, items, subtotal, combo: 0, shipping: subtotal >= 100 ? 0 : 8, total: subtotal + (subtotal >= 100 ? 0 : 8), status };
-    };
-    return [
-      mk([0, 3], 26, 'Entregado', 'Carlos Espinosa', 'Bogotá'),
-      mk([20, 11], 95, 'Enviado', 'María Fernanda R.', 'Medellín'),
-      mk([25, 15], 240, 'Pago Verificado', 'Andrés Palacios', 'Cali'),
-      mk([10, 19, 22], 640, 'Pendiente por Confirmar', 'Laura Gutiérrez', 'Barranquilla')
-    ];
-  }
-
   /* ══════════ 9. EVENTOS ══════════ */
   function bind() {
     $('#pinSubmit').addEventListener('click', tryPin);
@@ -392,6 +420,11 @@
     $('#importFile').addEventListener('change', e => {
       const f = e.target.files && e.target.files[0];
       if (f) importCatalog(f);
+      e.target.value = '';
+    });
+    $('#importClientesFile').addEventListener('change', e => {
+      const f = e.target.files && e.target.files[0];
+      if (f) importClientes(f);
       e.target.value = '';
     });
 
@@ -403,8 +436,9 @@
       const rm = ev.target.closest('[data-remove]');
       if (rm) { const p = getProduct(rm.dataset.remove); if (p && confirm('¿Eliminar "' + p.name + '" del catálogo?')) { TA.state.products = TA.state.products.filter(x => x.id !== p.id); TA.saveProducts(); renderAdmin(); toast('Producto eliminado', 'info'); } return; }
       const tg = ev.target.closest('[data-toggle]'); if (tg) { const p = getProduct(tg.dataset.toggle); p.active = p.active === false; TA.saveProducts(); renderAdmin(); return; }
-      const dso = ev.target.closest('#seedOrders2'); if (dso) { TA.state.orders = demoOrders().concat(TA.state.orders); TA.saveOrders(); renderAdmin(); toast('Pedidos de demostración cargados', 'ok'); return; }
       const dord = ev.target.closest('[data-delorder]'); if (dord && confirm('¿Eliminar este pedido?')) { TA.state.orders = TA.state.orders.filter(o => o.code !== dord.dataset.delorder); TA.saveOrders(); renderAdmin(); toast('Pedido eliminado', 'info'); return; }
+      const dcl = ev.target.closest('[data-delclient]');
+      if (dcl) { const c = S().clients.find(x => x.id === dcl.dataset.delclient); if (c && confirm('¿Eliminar al cliente "' + c.name + '" del registro?')) { TA.state.clients = TA.state.clients.filter(x => x.id !== c.id); TA.saveClients(); renderAdmin(); toast('Cliente eliminado del registro', 'info'); } return; }
       const denc = ev.target.closest('[data-delencargo]'); if (denc && confirm('¿Eliminar esta solicitud de encargo?')) { TA.state.encargos = TA.state.encargos.filter(e => e.id !== denc.dataset.delencargo); TA.saveEncargos(); renderAdmin(); toast('Encargo eliminado', 'info'); return; }
       const exp = ev.target.closest('#exportOrders'); if (exp) { TA.downloadFile('importaciones-adriel-pedidos.json', JSON.stringify(S().orders, null, 2)); toast('Pedidos exportados ✓', 'ok'); return; }
       const expCsv = ev.target.closest('#exportOrdersCsv'); if (expCsv) { TA.downloadFile('importaciones-adriel-pedidos.csv', ordersCSV(), 'text/csv'); toast('Pedidos exportados en CSV ✓', 'ok'); return; }
@@ -412,6 +446,8 @@
       const rst = ev.target.closest('#resetCatalog'); if (rst) { resetCatalog(); return; }
       const exc = ev.target.closest('#exportCatalog'); if (exc) { exportCatalog(); return; }
       const imp = ev.target.closest('#importCatalog'); if (imp) { $('#importFile').click(); return; }
+      const expC = ev.target.closest('#exportClientes'); if (expC) { TA.downloadFile('clientes.json', TA.exportClientesJSON()); toast('Clientes exportados ✓ — reemplaza data/clientes.json para publicar', 'ok'); return; }
+      const impC = ev.target.closest('#importClientes'); if (impC) { $('#importClientesFile').click(); return; }
     });
 
     document.addEventListener('change', ev => {

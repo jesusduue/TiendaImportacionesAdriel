@@ -1,0 +1,820 @@
+[
+  {
+    "code": "TS-316602",
+    "ts": 1789852316602,
+    "client": {
+      "name": "jesus duque",
+      "phone": "04247777965",
+      "address": "las delicias, la fria, calle 9",
+      "notes": "prueba"
+    },
+    "items": [
+      {
+        "id": "p13-biotin-10000mcg-keratin",
+        "name": "Extra Strength Biotin 10,000 mcg Plus Keratin",
+        "brand": "Spring Valley",
+        "price": 12,
+        "qty": 1,
+        "cat": "suplementos",
+        "visual": "bottle",
+        "tone": "cream",
+        "image": "imgProductos/biotin10000mcgSpringValley.jpeg"
+      }
+    ],
+    "subtotal": 12,
+    "combo": 0,
+    "shipping": 0,
+    "total": 12,
+    "status": "Pendiente por Confirmar"
+  },
+  {
+    "code": "TS-1026",
+    "ts": 1789843661498,
+    "client": {
+      "name": "Carlos Espinosa",
+      "phone": "310555100",
+      "address": "Calle 10 # 20-0, Bogotá",
+      "notes": ""
+    },
+    "items": [
+      {
+        "id": "p1-chewable-c-500-mg",
+        "name": "Chewable C 500 mg",
+        "brand": "Spring Valley",
+        "price": 10,
+        "qty": 1,
+        "cat": "suplementos",
+        "visual": "bottle",
+        "tone": "cream"
+      },
+      {
+        "id": "p4-biotin-1-000-mcg",
+        "name": "Biotin 1,000 mcg",
+        "brand": "Spring Valley",
+        "price": 10,
+        "qty": 2,
+        "cat": "suplementos",
+        "visual": "softgel",
+        "tone": "rose"
+      }
+    ],
+    "subtotal": 30,
+    "combo": 0,
+    "shipping": 8,
+    "total": 38,
+    "status": "Entregado"
+  },
+  {
+    "code": "TS-1235",
+    "ts": 1789839521498,
+    "client": {
+      "name": "María Fernanda R.",
+      "phone": "330555120",
+      "address": "Calle 30 # 40-20, Medellín",
+      "notes": ""
+    },
+    "items": [
+      {
+        "id": "p21-super-b-complex",
+        "name": "Super B-Complex",
+        "brand": "People's Choice",
+        "price": 5,
+        "qty": 1,
+        "cat": "suplementos",
+        "visual": "bottle",
+        "tone": "amber"
+      },
+      {
+        "id": "p12-collagen-peptides-type-1-3",
+        "name": "Collagen Peptides Type 1 & 3",
+        "brand": "Spring Valley",
+        "price": 25,
+        "qty": 2,
+        "cat": "suplementos",
+        "visual": "jar",
+        "tone": "rose"
+      }
+    ],
+    "subtotal": 55,
+    "combo": 0,
+    "shipping": 8,
+    "total": 63,
+    "status": "Enviado"
+  },
+  {
+    "code": "TS-1415",
+    "ts": 1789830821498,
+    "client": {
+      "name": "Andrés Palacios",
+      "phone": "335555125",
+      "address": "Calle 35 # 45-25, Cali",
+      "notes": ""
+    },
+    "items": [
+      {
+        "id": "p26-hair-skin-nails-gummies-co",
+        "name": "Hair, Skin & Nails Gummies (Collagen & Biotin)",
+        "brand": "Nature's Bounty",
+        "price": 20,
+        "qty": 2,
+        "cat": "suplementos",
+        "visual": "gummy",
+        "tone": "wine"
+      },
+      {
+        "id": "p16-green-tea-standardized-ext",
+        "name": "Green Tea Standardized Extract 500 mg",
+        "brand": "Spring Valley",
+        "price": 15,
+        "qty": 2,
+        "cat": "suplementos",
+        "visual": "bottle",
+        "tone": "green"
+      }
+    ],
+    "subtotal": 70,
+    "combo": 0,
+    "shipping": 8,
+    "total": 78,
+    "status": "Pago Verificado"
+  },
+  {
+    "code": "TS-1710",
+    "ts": 1789806821498,
+    "client": {
+      "name": "Laura Gutiérrez",
+      "phone": "320555110",
+      "address": "Calle 20 # 30-10, Barranquilla",
+      "notes": ""
+    },
+    "items": [
+      {
+        "id": "p11-glucosamine-sulfate-potass",
+        "name": "Glucosamine Sulfate Potassium Chloride 1,000 mg",
+        "brand": "Spring Valley",
+        "price": 30,
+        "qty": 1,
+        "cat": "suplementos",
+        "visual": "bottle",
+        "tone": "teal"
+      },
+      {
+        "id": "p20-glucosamine-500-mg",
+        "name": "Glucosamine 500 mg",
+        "brand": "People's Choice",
+        "price": 5,
+        "qty": 2,
+        "cat": "suplementos",
+        "visual": "bottle",
+        "tone": "teal"
+      },
+      {
+        "id": "p23-melatonin",
+        "name": "Melatonin",
+        "brand": "People's Choice",
+        "price": 5,
+        "qty": 1,
+        "cat": "suplementos",
+        "visual": "bottle",
+        "tone": "purple"
+      }
+    ],
+    "subtotal": 45,
+    "combo": 0,
+    "shipping": 8,
+    "total": 53,
+    "status": "Pendiente por Confirmar"
+  },
+  {
+    "code": "TS-1026",
+    "ts": 1789843661322,
+    "client": {
+      "name": "Carlos Espinosa",
+      "phone": "310555100",
+      "address": "Calle 10 # 20-0, Bogotá",
+      "notes": ""
+    },
+    "items": [
+      {
+        "id": "p1-chewable-c-500-mg",
+        "name": "Chewable C 500 mg",
+        "brand": "Spring Valley",
+        "price": 10,
+        "qty": 1,
+        "cat": "suplementos",
+        "visual": "bottle",
+        "tone": "cream"
+      },
+      {
+        "id": "p4-biotin-1-000-mcg",
+        "name": "Biotin 1,000 mcg",
+        "brand": "Spring Valley",
+        "price": 10,
+        "qty": 2,
+        "cat": "suplementos",
+        "visual": "softgel",
+        "tone": "rose"
+      }
+    ],
+    "subtotal": 30,
+    "combo": 0,
+    "shipping": 8,
+    "total": 38,
+    "status": "Entregado"
+  },
+  {
+    "code": "TS-1235",
+    "ts": 1789839521322,
+    "client": {
+      "name": "María Fernanda R.",
+      "phone": "330555120",
+      "address": "Calle 30 # 40-20, Medellín",
+      "notes": ""
+    },
+    "items": [
+      {
+        "id": "p21-super-b-complex",
+        "name": "Super B-Complex",
+        "brand": "People's Choice",
+        "price": 5,
+        "qty": 1,
+        "cat": "suplementos",
+        "visual": "bottle",
+        "tone": "amber"
+      },
+      {
+        "id": "p12-collagen-peptides-type-1-3",
+        "name": "Collagen Peptides Type 1 & 3",
+        "brand": "Spring Valley",
+        "price": 25,
+        "qty": 2,
+        "cat": "suplementos",
+        "visual": "jar",
+        "tone": "rose"
+      }
+    ],
+    "subtotal": 55,
+    "combo": 0,
+    "shipping": 8,
+    "total": 63,
+    "status": "Enviado"
+  },
+  {
+    "code": "TS-1415",
+    "ts": 1789830821322,
+    "client": {
+      "name": "Andrés Palacios",
+      "phone": "335555125",
+      "address": "Calle 35 # 45-25, Cali",
+      "notes": ""
+    },
+    "items": [
+      {
+        "id": "p26-hair-skin-nails-gummies-co",
+        "name": "Hair, Skin & Nails Gummies (Collagen & Biotin)",
+        "brand": "Nature's Bounty",
+        "price": 20,
+        "qty": 2,
+        "cat": "suplementos",
+        "visual": "gummy",
+        "tone": "wine"
+      },
+      {
+        "id": "p16-green-tea-standardized-ext",
+        "name": "Green Tea Standardized Extract 500 mg",
+        "brand": "Spring Valley",
+        "price": 15,
+        "qty": 2,
+        "cat": "suplementos",
+        "visual": "bottle",
+        "tone": "green"
+      }
+    ],
+    "subtotal": 70,
+    "combo": 0,
+    "shipping": 8,
+    "total": 78,
+    "status": "Pago Verificado"
+  },
+  {
+    "code": "TS-1710",
+    "ts": 1789806821322,
+    "client": {
+      "name": "Laura Gutiérrez",
+      "phone": "320555110",
+      "address": "Calle 20 # 30-10, Barranquilla",
+      "notes": ""
+    },
+    "items": [
+      {
+        "id": "p11-glucosamine-sulfate-potass",
+        "name": "Glucosamine Sulfate Potassium Chloride 1,000 mg",
+        "brand": "Spring Valley",
+        "price": 30,
+        "qty": 1,
+        "cat": "suplementos",
+        "visual": "bottle",
+        "tone": "teal"
+      },
+      {
+        "id": "p20-glucosamine-500-mg",
+        "name": "Glucosamine 500 mg",
+        "brand": "People's Choice",
+        "price": 5,
+        "qty": 2,
+        "cat": "suplementos",
+        "visual": "bottle",
+        "tone": "teal"
+      },
+      {
+        "id": "p23-melatonin",
+        "name": "Melatonin",
+        "brand": "People's Choice",
+        "price": 5,
+        "qty": 1,
+        "cat": "suplementos",
+        "visual": "bottle",
+        "tone": "purple"
+      }
+    ],
+    "subtotal": 45,
+    "combo": 0,
+    "shipping": 8,
+    "total": 53,
+    "status": "Pendiente por Confirmar"
+  },
+  {
+    "code": "TS-1026",
+    "ts": 1789843660554,
+    "client": {
+      "name": "Carlos Espinosa",
+      "phone": "310555100",
+      "address": "Calle 10 # 20-0, Bogotá",
+      "notes": ""
+    },
+    "items": [
+      {
+        "id": "p1-chewable-c-500-mg",
+        "name": "Chewable C 500 mg",
+        "brand": "Spring Valley",
+        "price": 10,
+        "qty": 1,
+        "cat": "suplementos",
+        "visual": "bottle",
+        "tone": "cream"
+      },
+      {
+        "id": "p4-biotin-1-000-mcg",
+        "name": "Biotin 1,000 mcg",
+        "brand": "Spring Valley",
+        "price": 10,
+        "qty": 2,
+        "cat": "suplementos",
+        "visual": "softgel",
+        "tone": "rose"
+      }
+    ],
+    "subtotal": 30,
+    "combo": 0,
+    "shipping": 8,
+    "total": 38,
+    "status": "Entregado"
+  },
+  {
+    "code": "TS-1235",
+    "ts": 1789839520554,
+    "client": {
+      "name": "María Fernanda R.",
+      "phone": "330555120",
+      "address": "Calle 30 # 40-20, Medellín",
+      "notes": ""
+    },
+    "items": [
+      {
+        "id": "p21-super-b-complex",
+        "name": "Super B-Complex",
+        "brand": "People's Choice",
+        "price": 5,
+        "qty": 1,
+        "cat": "suplementos",
+        "visual": "bottle",
+        "tone": "amber"
+      },
+      {
+        "id": "p12-collagen-peptides-type-1-3",
+        "name": "Collagen Peptides Type 1 & 3",
+        "brand": "Spring Valley",
+        "price": 25,
+        "qty": 2,
+        "cat": "suplementos",
+        "visual": "jar",
+        "tone": "rose"
+      }
+    ],
+    "subtotal": 55,
+    "combo": 0,
+    "shipping": 8,
+    "total": 63,
+    "status": "Enviado"
+  },
+  {
+    "code": "TS-1415",
+    "ts": 1789830820554,
+    "client": {
+      "name": "Andrés Palacios",
+      "phone": "335555125",
+      "address": "Calle 35 # 45-25, Cali",
+      "notes": ""
+    },
+    "items": [
+      {
+        "id": "p26-hair-skin-nails-gummies-co",
+        "name": "Hair, Skin & Nails Gummies (Collagen & Biotin)",
+        "brand": "Nature's Bounty",
+        "price": 20,
+        "qty": 2,
+        "cat": "suplementos",
+        "visual": "gummy",
+        "tone": "wine"
+      },
+      {
+        "id": "p16-green-tea-standardized-ext",
+        "name": "Green Tea Standardized Extract 500 mg",
+        "brand": "Spring Valley",
+        "price": 15,
+        "qty": 2,
+        "cat": "suplementos",
+        "visual": "bottle",
+        "tone": "green"
+      }
+    ],
+    "subtotal": 70,
+    "combo": 0,
+    "shipping": 8,
+    "total": 78,
+    "status": "Pago Verificado"
+  },
+  {
+    "code": "TS-1710",
+    "ts": 1789806820554,
+    "client": {
+      "name": "Laura Gutiérrez",
+      "phone": "320555110",
+      "address": "Calle 20 # 30-10, Barranquilla",
+      "notes": ""
+    },
+    "items": [
+      {
+        "id": "p11-glucosamine-sulfate-potass",
+        "name": "Glucosamine Sulfate Potassium Chloride 1,000 mg",
+        "brand": "Spring Valley",
+        "price": 30,
+        "qty": 1,
+        "cat": "suplementos",
+        "visual": "bottle",
+        "tone": "teal"
+      },
+      {
+        "id": "p20-glucosamine-500-mg",
+        "name": "Glucosamine 500 mg",
+        "brand": "People's Choice",
+        "price": 5,
+        "qty": 2,
+        "cat": "suplementos",
+        "visual": "bottle",
+        "tone": "teal"
+      },
+      {
+        "id": "p23-melatonin",
+        "name": "Melatonin",
+        "brand": "People's Choice",
+        "price": 5,
+        "qty": 1,
+        "cat": "suplementos",
+        "visual": "bottle",
+        "tone": "purple"
+      }
+    ],
+    "subtotal": 45,
+    "combo": 0,
+    "shipping": 8,
+    "total": 53,
+    "status": "Pendiente por Confirmar"
+  },
+  {
+    "code": "TS-1026",
+    "ts": 1789843658971,
+    "client": {
+      "name": "Carlos Espinosa",
+      "phone": "310555100",
+      "address": "Calle 10 # 20-0, Bogotá",
+      "notes": ""
+    },
+    "items": [
+      {
+        "id": "p1-chewable-c-500-mg",
+        "name": "Chewable C 500 mg",
+        "brand": "Spring Valley",
+        "price": 10,
+        "qty": 1,
+        "cat": "suplementos",
+        "visual": "bottle",
+        "tone": "cream"
+      },
+      {
+        "id": "p4-biotin-1-000-mcg",
+        "name": "Biotin 1,000 mcg",
+        "brand": "Spring Valley",
+        "price": 10,
+        "qty": 2,
+        "cat": "suplementos",
+        "visual": "softgel",
+        "tone": "rose"
+      }
+    ],
+    "subtotal": 30,
+    "combo": 0,
+    "shipping": 8,
+    "total": 38,
+    "status": "Entregado"
+  },
+  {
+    "code": "TS-1235",
+    "ts": 1789839518971,
+    "client": {
+      "name": "María Fernanda R.",
+      "phone": "330555120",
+      "address": "Calle 30 # 40-20, Medellín",
+      "notes": ""
+    },
+    "items": [
+      {
+        "id": "p21-super-b-complex",
+        "name": "Super B-Complex",
+        "brand": "People's Choice",
+        "price": 5,
+        "qty": 1,
+        "cat": "suplementos",
+        "visual": "bottle",
+        "tone": "amber"
+      },
+      {
+        "id": "p12-collagen-peptides-type-1-3",
+        "name": "Collagen Peptides Type 1 & 3",
+        "brand": "Spring Valley",
+        "price": 25,
+        "qty": 2,
+        "cat": "suplementos",
+        "visual": "jar",
+        "tone": "rose"
+      }
+    ],
+    "subtotal": 55,
+    "combo": 0,
+    "shipping": 8,
+    "total": 63,
+    "status": "Enviado"
+  },
+  {
+    "code": "TS-1415",
+    "ts": 1789830818971,
+    "client": {
+      "name": "Andrés Palacios",
+      "phone": "335555125",
+      "address": "Calle 35 # 45-25, Cali",
+      "notes": ""
+    },
+    "items": [
+      {
+        "id": "p26-hair-skin-nails-gummies-co",
+        "name": "Hair, Skin & Nails Gummies (Collagen & Biotin)",
+        "brand": "Nature's Bounty",
+        "price": 20,
+        "qty": 2,
+        "cat": "suplementos",
+        "visual": "gummy",
+        "tone": "wine"
+      },
+      {
+        "id": "p16-green-tea-standardized-ext",
+        "name": "Green Tea Standardized Extract 500 mg",
+        "brand": "Spring Valley",
+        "price": 15,
+        "qty": 2,
+        "cat": "suplementos",
+        "visual": "bottle",
+        "tone": "green"
+      }
+    ],
+    "subtotal": 70,
+    "combo": 0,
+    "shipping": 8,
+    "total": 78,
+    "status": "Pago Verificado"
+  },
+  {
+    "code": "TS-1710",
+    "ts": 1789806818971,
+    "client": {
+      "name": "Laura Gutiérrez",
+      "phone": "320555110",
+      "address": "Calle 20 # 30-10, Barranquilla",
+      "notes": ""
+    },
+    "items": [
+      {
+        "id": "p11-glucosamine-sulfate-potass",
+        "name": "Glucosamine Sulfate Potassium Chloride 1,000 mg",
+        "brand": "Spring Valley",
+        "price": 30,
+        "qty": 1,
+        "cat": "suplementos",
+        "visual": "bottle",
+        "tone": "teal"
+      },
+      {
+        "id": "p20-glucosamine-500-mg",
+        "name": "Glucosamine 500 mg",
+        "brand": "People's Choice",
+        "price": 5,
+        "qty": 2,
+        "cat": "suplementos",
+        "visual": "bottle",
+        "tone": "teal"
+      },
+      {
+        "id": "p23-melatonin",
+        "name": "Melatonin",
+        "brand": "People's Choice",
+        "price": 5,
+        "qty": 1,
+        "cat": "suplementos",
+        "visual": "bottle",
+        "tone": "purple"
+      }
+    ],
+    "subtotal": 45,
+    "combo": 0,
+    "shipping": 8,
+    "total": 53,
+    "status": "Pendiente por Confirmar"
+  },
+  {
+    "code": "TS-1026",
+    "ts": 1789766769775,
+    "client": {
+      "name": "Carlos Espinosa",
+      "phone": "310555100",
+      "address": "Calle 10 # 20-0, Bogotá",
+      "notes": ""
+    },
+    "items": [
+      {
+        "id": "p1-chewable-c-500-mg",
+        "name": "Chewable C 500 mg",
+        "brand": "Spring Valley",
+        "price": 10,
+        "qty": 1,
+        "cat": "suplementos",
+        "visual": "bottle",
+        "tone": "cream"
+      },
+      {
+        "id": "p4-biotin-1-000-mcg",
+        "name": "Biotin 1,000 mcg",
+        "brand": "Spring Valley",
+        "price": 10,
+        "qty": 2,
+        "cat": "suplementos",
+        "visual": "softgel",
+        "tone": "rose"
+      }
+    ],
+    "subtotal": 30,
+    "combo": 0,
+    "shipping": 8,
+    "total": 38,
+    "status": "Entregado"
+  },
+  {
+    "code": "TS-1235",
+    "ts": 1789762629775,
+    "client": {
+      "name": "María Fernanda R.",
+      "phone": "330555120",
+      "address": "Calle 30 # 40-20, Medellín",
+      "notes": ""
+    },
+    "items": [
+      {
+        "id": "p21-super-b-complex",
+        "name": "Super B-Complex",
+        "brand": "People's Choice",
+        "price": 5,
+        "qty": 1,
+        "cat": "suplementos",
+        "visual": "bottle",
+        "tone": "amber"
+      },
+      {
+        "id": "p12-collagen-peptides-type-1-3",
+        "name": "Collagen Peptides Type 1 & 3",
+        "brand": "Spring Valley",
+        "price": 25,
+        "qty": 2,
+        "cat": "suplementos",
+        "visual": "jar",
+        "tone": "rose"
+      }
+    ],
+    "subtotal": 55,
+    "combo": 0,
+    "shipping": 8,
+    "total": 63,
+    "status": "Enviado"
+  },
+  {
+    "code": "TS-1415",
+    "ts": 1789753929775,
+    "client": {
+      "name": "Andrés Palacios",
+      "phone": "335555125",
+      "address": "Calle 35 # 45-25, Cali",
+      "notes": ""
+    },
+    "items": [
+      {
+        "id": "p26-hair-skin-nails-gummies-co",
+        "name": "Hair, Skin & Nails Gummies (Collagen & Biotin)",
+        "brand": "Nature's Bounty",
+        "price": 20,
+        "qty": 2,
+        "cat": "suplementos",
+        "visual": "gummy",
+        "tone": "wine"
+      },
+      {
+        "id": "p16-green-tea-standardized-ext",
+        "name": "Green Tea Standardized Extract 500 mg",
+        "brand": "Spring Valley",
+        "price": 15,
+        "qty": 2,
+        "cat": "suplementos",
+        "visual": "bottle",
+        "tone": "green"
+      }
+    ],
+    "subtotal": 70,
+    "combo": 0,
+    "shipping": 8,
+    "total": 78,
+    "status": "Pago Verificado"
+  },
+  {
+    "code": "TS-1710",
+    "ts": 1789729929775,
+    "client": {
+      "name": "Laura Gutiérrez",
+      "phone": "320555110",
+      "address": "Calle 20 # 30-10, Barranquilla",
+      "notes": ""
+    },
+    "items": [
+      {
+        "id": "p11-glucosamine-sulfate-potass",
+        "name": "Glucosamine Sulfate Potassium Chloride 1,000 mg",
+        "brand": "Spring Valley",
+        "price": 30,
+        "qty": 1,
+        "cat": "suplementos",
+        "visual": "bottle",
+        "tone": "teal"
+      },
+      {
+        "id": "p20-glucosamine-500-mg",
+        "name": "Glucosamine 500 mg",
+        "brand": "People's Choice",
+        "price": 5,
+        "qty": 2,
+        "cat": "suplementos",
+        "visual": "bottle",
+        "tone": "teal"
+      },
+      {
+        "id": "p23-melatonin",
+        "name": "Melatonin",
+        "brand": "People's Choice",
+        "price": 5,
+        "qty": 1,
+        "cat": "suplementos",
+        "visual": "bottle",
+        "tone": "purple"
+      }
+    ],
+    "subtotal": 45,
+    "combo": 0,
+    "shipping": 8,
+    "total": 53,
+    "status": "Pendiente por Confirmar"
+  }
+]

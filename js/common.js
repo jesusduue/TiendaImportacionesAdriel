@@ -22,6 +22,7 @@ window.TA = (function () {
   const LEGACY_KEY = 'importacionesadriel.db.v1';
   const ADMIN_SESSION = 'importacionesadriel.admin.ok';
   const CATALOG_URL = 'data/productos.json';
+  const CLIENTES_URL = 'data/clientes.json';
 
   const CATS = {
     suplementos: { label: 'Salud & Suplementos', short: 'Suplementos', tag: 'tag-sup', ico: '💊' },
@@ -114,12 +115,14 @@ window.TA = (function () {
     cart: [],
     orders: [],
     encargos: [],
+    clients: [],
     settings: Object.assign({}, DEFAULT_SETTINGS),
     seq: 1,
     flashEnd: 0,
     catalogVersion: null,   // versión del JSON adoptada
     catalogDirty: false,    // true si hay ediciones locales sin publicar
     catalogSource: null,    // 'json' | 'local' | 'legacy' | null
+    clientesVersion: null,  // versión del clientes.json ya incorporada
     catalogError: null,     // mensaje si no se pudo cargar nada
     ready: false
   };
@@ -131,9 +134,9 @@ window.TA = (function () {
     try {
       localStorage.setItem(DB_KEY, JSON.stringify({
         products: state.products, cart: state.cart, orders: state.orders,
-        encargos: state.encargos, settings: state.settings, seq: state.seq,
-        flashEnd: state.flashEnd, catalogVersion: state.catalogVersion,
-        catalogDirty: state.catalogDirty
+        encargos: state.encargos, clients: state.clients, settings: state.settings,
+        seq: state.seq, flashEnd: state.flashEnd, catalogVersion: state.catalogVersion,
+        catalogDirty: state.catalogDirty, clientesVersion: state.clientesVersion
       }));
     } catch (e) { /* almacenamiento lleno o bloqueado */ }
   }
@@ -183,6 +186,71 @@ window.TA = (function () {
     writeRecord();
   }
 
+  /* ════ CLIENTES ════
+     data/clientes.json es la fuente de verdad publicada. Cada pedido
+     registra/actualiza al cliente en localStorage; el dueño publica la
+     lista con "Exportar clientes" y los visitantes la incorporan. */
+
+  function normalizeClient(raw, i) {
+    if (!raw || typeof raw !== 'object') return null;
+    const name = String(raw.name || '').trim();
+    const phone = String(raw.phone || '').trim();
+    if (!name || !phone) return null;
+    const num = (v, d) => { const n = Number(v); return isFinite(n) && n >= 0 ? n : d; };
+    return {
+      id: String(raw.id || '').trim() || ('c' + (i + 1) + '-' + slug(name).slice(0, 24)),
+      name, phone,
+      address: String(raw.address || '').trim(),
+      notes: String(raw.notes || '').trim(),
+      pedidos: Math.round(num(raw.pedidos, 0)),
+      totalGastado: Math.round(num(raw.totalGastado, 0) * 100) / 100,
+      firstOrderAt: num(raw.firstOrderAt, 0),
+      lastOrderAt: num(raw.lastOrderAt, 0),
+      lastOrderCode: String(raw.lastOrderCode || '').trim()
+    };
+  }
+
+  const clientPhone = c => String(c && c.phone || '').replace(/[^\d]/g, '');
+
+  /* Registra o actualiza al cliente a partir de un pedido confirmado */
+  function registerClient(data, order) {
+    const name = String(data && data.name || '').trim();
+    const phone = clientPhone(data);
+    if (!name || !phone) return null;
+    let c = state.clients.find(x => clientPhone(x) === phone);
+    if (!c) {
+      c = {
+        id: 'c' + Date.now().toString(36) + '-' + slug(name).slice(0, 24),
+        name, phone, address: '', notes: '',
+        pedidos: 0, totalGastado: 0, firstOrderAt: 0, lastOrderAt: 0, lastOrderCode: ''
+      };
+      state.clients.push(c);
+    }
+    c.name = name;
+    if (data.address) c.address = String(data.address).trim();
+    if (data.notes) c.notes = String(data.notes).trim();
+    c.pedidos += 1;
+    c.totalGastado = Math.round((c.totalGastado + ((order && order.total) || 0)) * 100) / 100;
+    const ts = (order && order.ts) || Date.now();
+    if (!c.firstOrderAt) c.firstOrderAt = ts;
+    c.lastOrderAt = ts;
+    c.lastOrderCode = (order && order.code) || '';
+    writeRecord();
+    return c;
+  }
+
+  /* Incorpora clientes publicados en data/clientes.json sin perder
+     los ya registrados localmente (se detectan por teléfono). */
+  function mergeClientes(jsonClients, version) {
+    let added = 0;
+    (jsonClients || []).map(normalizeClient).filter(Boolean).forEach(c => {
+      if (!state.clients.some(x => clientPhone(x) === clientPhone(c))) { state.clients.push(c); added++; }
+    });
+    state.clientesVersion = version;
+    if (added) writeRecord();
+    return added;
+  }
+
   /* Migración desde la versión anterior del sitio (db v1):
      se conservan carrito, pedidos, encargos y ajustes. El catálogo
      ahora vive en data/productos.json. */
@@ -209,11 +277,13 @@ window.TA = (function () {
       state.cart = Array.isArray(rec.cart) ? rec.cart.filter(i => i && i.id && i.qty > 0) : [];
       state.orders = Array.isArray(rec.orders) ? rec.orders : [];
       state.encargos = Array.isArray(rec.encargos) ? rec.encargos : [];
+      state.clients = Array.isArray(rec.clients) ? rec.clients : [];
       state.settings = Object.assign({}, DEFAULT_SETTINGS, rec.settings || {});
       state.seq = Number(rec.seq) || 1;
       state.flashEnd = Number(rec.flashEnd) || 0;
       state.catalogVersion = rec.catalogVersion || null;
       state.catalogDirty = !!rec.catalogDirty;
+      state.clientesVersion = rec.clientesVersion || null;
       if (state.products.length) state.catalogSource = 'local';
     }
 
@@ -245,6 +315,18 @@ window.TA = (function () {
       }
     }
 
+    /* Incorporar clientes publicados en data/clientes.json */
+    try {
+      const resC = await fetch(CLIENTES_URL, { cache: 'no-cache' });
+      if (resC.ok) {
+        const jsonC = await resC.json();
+        if (jsonC && Array.isArray(jsonC.clients)) {
+          const versionC = String((jsonC.meta && jsonC.meta.updatedAt) || '');
+          if (state.clientesVersion !== versionC) mergeClientes(jsonC.clients, versionC);
+        }
+      }
+    } catch (e) { /* sin servidor (file://): usar copia local */ }
+
     state.ready = true;
     return state;
   }
@@ -254,6 +336,7 @@ window.TA = (function () {
   function saveCart() { writeRecord(); }
   function saveOrders() { writeRecord(); }
   function saveEncargos() { writeRecord(); }
+  function saveClients() { writeRecord(); }
   function saveSettings() { writeRecord(); }
   /* Edición del catálogo desde el admin: queda marcada como local (dirty)
      hasta que se publica con "Exportar catálogo JSON" y se reemplaza el archivo. */
@@ -331,6 +414,32 @@ window.TA = (function () {
     return { ok: true, products };
   }
 
+  /* Genera el contenido listo para data/clientes.json */
+  function exportClientesJSON() {
+    return JSON.stringify({
+      meta: {
+        store: state.settings.store,
+        version: 1,
+        updatedAt: new Date().toISOString(),
+        notes: 'Registro de clientes de la tienda. Se llena automáticamente con cada pedido. Gestiónalo desde admin.html (pestaña Clientes) y publica cambios reemplazando este archivo.'
+      },
+      clients: state.clients
+    }, null, 2);
+  }
+
+  /* Valida un JSON de clientes importado. Devuelve {ok, clients, error} */
+  function importClientesJSON(text) {
+    let json;
+    try { json = JSON.parse(text); } catch (e) { return { ok: false, error: 'JSON inválido: ' + e.message }; }
+    const raw = Array.isArray(json) ? json : (json && Array.isArray(json.clients) ? json.clients : null);
+    if (!raw) return { ok: false, error: 'El archivo debe contener un array "clients".' };
+    const clients = raw.map(normalizeClient).filter(Boolean);
+    if (!clients.length) return { ok: false, error: 'No se encontró ningún cliente válido en el archivo.' };
+    const phones = new Set(clients.map(clientPhone));
+    if (phones.size !== clients.length) return { ok: false, error: 'Hay teléfonos duplicados en el archivo.' };
+    return { ok: true, clients };
+  }
+
   /* Descarga un archivo de texto (exportaciones) */
   function downloadFile(filename, content, mime) {
     const blob = new Blob([content], { type: mime || 'application/json' });
@@ -343,11 +452,12 @@ window.TA = (function () {
 
   /* ══════════ API PÚBLICA ══════════ */
   return {
-    CATS, ORDER_STATUS, ENCARGO_STATUS, BULLETS, DEFAULT_SETTINGS, CATALOG_URL,
+    CATS, ORDER_STATUS, ENCARGO_STATUS, BULLETS, DEFAULT_SETTINGS, CATALOG_URL, CLIENTES_URL,
     esc, money, slug, debounce, fmtDate, starsHTML, discountPct, $, $$, toast,
-    state, init, persist, saveCart, saveOrders, saveEncargos, saveSettings,
+    state, init, persist, saveCart, saveOrders, saveEncargos, saveClients, saveSettings,
     saveProducts, nextSeq, getProduct, waLink, buildMessage, buildEncargoMessage,
     isAdmin, tryPin, logoutAdmin, exportCatalogJSON, importCatalogJSON, downloadFile,
-    normalizeProduct, adoptCatalog
+    normalizeProduct, adoptCatalog, normalizeClient, registerClient, mergeClientes,
+    exportClientesJSON, importClientesJSON
   };
 })();
