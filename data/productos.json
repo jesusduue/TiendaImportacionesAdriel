@@ -46,7 +46,7 @@
       "bullets": ["Sin gluten, sin lácteos y sin colorantes artificiales", "Pureza verificada por laboratorio independiente", "Apto para consumo diario continuo"],
       "visual": "softgel",
       "tone": "lilac",
-      "image": "",
+      "image": "imgProductos/magnesiumCitrate100mg.jpeg",
       "active": true,
       "featured": false,
       "createdAt": "2026-07-10T10:00:00.000Z"
@@ -68,7 +68,7 @@
       "bullets": ["Pureza verificada por laboratorio independiente", "Apto para consumo diario continuo", "Fórmula importada y sellada de fábrica"],
       "visual": "gummy",
       "tone": "purple",
-      "image": "",
+      "image": "imgProductos/melatonin5mgSpringValley.jpeg",
       "active": true,
       "featured": true,
       "createdAt": "2026-06-28T10:00:00.000Z"
@@ -90,7 +90,7 @@
       "bullets": ["Apto para consumo diario continuo", "Fórmula importada y sellada de fábrica", "Resultados perceptibles en 3 a 4 semanas"],
       "visual": "softgel",
       "tone": "rose",
-      "image": "",
+      "image": "imgProductos/biotin1000mgSpringValley.jpeg",
       "active": true,
       "featured": true,
       "createdAt": "2026-06-25T10:00:00.000Z"
@@ -112,7 +112,7 @@
       "bullets": ["Fórmula importada y sellada de fábrica", "Resultados perceptibles en 3 a 4 semanas", "Dosis clínicamente respaldada por porción"],
       "visual": "bottle",
       "tone": "green",
-      "image": "",
+      "image": "imgProductos/appleCiderVinegar450mg.jpeg",
       "active": true,
       "featured": false,
       "createdAt": "2026-07-03T10:00:00.000Z"
@@ -134,7 +134,7 @@
       "bullets": ["Resultados perceptibles en 3 a 4 semanas", "Dosis clínicamente respaldada por porción", "Fácil de tomar, sin sabor amargo"],
       "visual": "softgel",
       "tone": "amber",
-      "image": "",
+      "image": "imgProductos/vitaminaD3125mcgSpringValley.jpeg",
       "active": true,
       "featured": true,
       "createdAt": "2026-06-30T10:00:00.000Z"
@@ -178,7 +178,7 @@
       "bullets": ["Fácil de tomar, sin sabor amargo", "Alta biodisponibilidad y absorción rápida", "Sin gluten, sin lácteos y sin colorantes artificiales"],
       "visual": "kids",
       "tone": "lilac",
-      "image": "",
+      "image": "imgProductos/melatoninKids1mgSpringValley.jpeg",
       "active": true,
       "featured": false,
       "createdAt": "2026-07-22T10:00:00.000Z"
@@ -200,7 +200,7 @@
       "bullets": ["Alta biodisponibilidad y absorción rápida", "Sin gluten, sin lácteos y sin colorantes artificiales", "Pureza verificada por laboratorio independiente"],
       "visual": "bottle",
       "tone": "olive",
-      "image": "",
+      "image": "imgProductos/L-Cartinina400mgAlphaLipoicAcid200mg.jpeg",
       "active": true,
       "featured": false,
       "createdAt": "2026-07-07T10:00:00.000Z"
@@ -222,7 +222,7 @@
       "bullets": ["Sin gluten, sin lácteos y sin colorantes artificiales", "Pureza verificada por laboratorio independiente", "Apto para consumo diario continuo"],
       "visual": "bottle",
       "tone": "green",
-      "image": "",
+      "image": "imgProductos/ashwaganda500mgSpringValley.jpeg",
       "active": true,
       "featured": false,
       "createdAt": "2026-07-01T10:00:00.000Z"
@@ -244,7 +244,7 @@
       "bullets": ["Pureza verificada por laboratorio independiente", "Apto para consumo diario continuo", "Fórmula importada y sellada de fábrica"],
       "visual": "bottle",
       "tone": "teal",
-      "image": "",
+      "image": "imgProductos/GlucosamineSulfatePotassium1000mg.jpeg",
       "active": true,
       "featured": true,
       "createdAt": "2026-06-27T10:00:00.000Z"
@@ -266,7 +266,7 @@
       "bullets": ["Apto para consumo diario continuo", "Fórmula importada y sellada de fábrica", "Resultados perceptibles en 3 a 4 semanas"],
       "visual": "jar",
       "tone": "rose",
-      "image": "",
+      "image": "imgProductos/collagenPeptides9OzSpringValley.jpeg",
       "active": true,
       "featured": true,
       "createdAt": "2026-07-05T10:00:00.000Z"
@@ -310,7 +310,7 @@
       "bullets": ["Resultados perceptibles en 3 a 4 semanas", "Dosis clínicamente respaldada por porción", "Fácil de tomar, sin sabor amargo"],
       "visual": "bottle",
       "tone": "amber",
-      "image": "",
+      "image": "imgProductos/turmericCurcumin500mgSpringValley.jpeg",
       "active": true,
       "featured": false,
       "createdAt": "2026-07-09T10:00:00.000Z"
@@ -332,7 +332,7 @@
       "bullets": ["Dosis clínicamente respaldada por porción", "Fácil de tomar, sin sabor amargo", "Alta biodisponibilidad y absorción rápida"],
       "visual": "bottle",
       "tone": "olive",
-      "image": "",
+      "image": "imgProductos/milkThistle175mgSpringValley.jpeg",
       "active": true,
       "featured": false,
       "createdAt": "2026-07-12T10:00:00.000Z"
@@ -354,7 +354,7 @@
       "bullets": ["Fácil de tomar, sin sabor amargo", "Alta biodisponibilidad y absorción rápida", "Sin gluten, sin lácteos y sin colorantes artificiales"],
       "visual": "bottle",
       "tone": "green",
-      "image": "",
+      "image": "imgProductos/greenTea500mgSpringValley.jpeg",
       "active": true,
       "featured": false,
       "createdAt": "2026-07-16T10:00:00.000Z"
@@ -420,7 +420,7 @@
       "bullets": ["Pureza verificada por laboratorio independiente", "Apto para consumo diario continuo", "Fórmula importada y sellada de fábrica"],
       "visual": "gummy",
       "tone": "rose",
-      "image": "",
+      "image": "imgProductos/womenMultiZeroSugarSpringValley.jpeg",
       "active": true,
       "featured": false,
       "createdAt": "2026-07-20T10:00:00.000Z"
@@ -442,7 +442,7 @@
       "bullets": ["Apto para consumo diario continuo", "Fórmula importada y sellada de fábrica", "Resultados perceptibles en 3 a 4 semanas"],
       "visual": "bottle",
       "tone": "teal",
-      "image": "",
+      "image": "imgProductos/glucosamina500mgPeopleChoice.jpeg",
       "active": true,
       "featured": false,
       "createdAt": "2026-08-02T10:00:00.000Z"
