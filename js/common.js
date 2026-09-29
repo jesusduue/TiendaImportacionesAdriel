@@ -65,7 +65,7 @@ window.TA = (function () {
 
   const DEFAULT_SETTINGS = {
     store: 'Importaciones Adriel',
-    whatsapp: '584247777965',
+    whatsapp: '584128540293',
     freeShipping: 100,
     shipCost: 8,
     comboQty: 2,

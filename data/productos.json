@@ -464,7 +464,7 @@
       "bullets": ["Fórmula importada y sellada de fábrica", "Resultados perceptibles en 3 a 4 semanas", "Dosis clínicamente respaldada por porción"],
       "visual": "bottle",
       "tone": "amber",
-      "image": "",
+      "image": "imgProductos/superB-ComplexPeopleChoice.jpeg",
       "active": true,
       "featured": false,
       "createdAt": "2026-08-04T10:00:00.000Z"
@@ -486,7 +486,7 @@
       "bullets": ["Resultados perceptibles en 3 a 4 semanas", "Dosis clínicamente respaldada por porción", "Fácil de tomar, sin sabor amargo"],
       "visual": "bottle",
       "tone": "cream",
-      "image": "",
+      "image": "imgProductos/vitaminaC500mgPeopleChoice.jpeg",
       "active": true,
       "featured": false,
       "createdAt": "2026-08-06T10:00:00.000Z"
@@ -508,7 +508,7 @@
       "bullets": ["Dosis clínicamente respaldada por porción", "Fácil de tomar, sin sabor amargo", "Alta biodisponibilidad y absorción rápida"],
       "visual": "bottle",
       "tone": "purple",
-      "image": "",
+      "image": "imgProductos/melatoninPeapleChoice.avif",
       "active": true,
       "featured": false,
       "createdAt": "2026-08-08T10:00:00.000Z"
@@ -530,7 +530,7 @@
       "bullets": ["Fácil de tomar, sin sabor amargo", "Alta biodisponibilidad y absorción rápida", "Sin gluten, sin lácteos y sin colorantes artificiales"],
       "visual": "bottle",
       "tone": "olive",
-      "image": "",
+      "image": "imgProductos/ginseng500mgPeopleChoice.jpeg",
       "active": true,
       "featured": false,
       "createdAt": "2026-08-10T10:00:00.000Z"
@@ -552,7 +552,7 @@
       "bullets": ["Alta biodisponibilidad y absorción rápida", "Sin gluten, sin lácteos y sin colorantes artificiales", "Pureza verificada por laboratorio independiente"],
       "visual": "gummy",
       "tone": "rose",
-      "image": "",
+      "image": "imgProductos/biotin2500mcgNatureBounty.jpeg",
       "active": true,
       "featured": true,
       "createdAt": "2026-06-21T10:00:00.000Z"
@@ -574,7 +574,7 @@
       "bullets": ["Sin gluten, sin lácteos y sin colorantes artificiales", "Pureza verificada por laboratorio independiente", "Apto para consumo diario continuo"],
       "visual": "gummy",
       "tone": "wine",
-      "image": "",
+      "image": "imgProductos/CollagenBiotin100mgNaturesBounty.jpeg",
       "active": true,
       "featured": false,
       "createdAt": "2026-07-25T10:00:00.000Z"
@@ -596,7 +596,7 @@
       "bullets": ["Pureza verificada por laboratorio independiente", "Apto para consumo diario continuo", "Fórmula importada y sellada de fábrica"],
       "visual": "gummy",
       "tone": "lilac",
-      "image": "",
+      "image": "imgProductos/womenMultiCollagen50mgNaturesBounty.jpeg",
       "active": true,
       "featured": false,
       "createdAt": "2026-08-01T10:00:00.000Z"
@@ -618,7 +618,7 @@
       "bullets": ["Apto para consumo diario continuo", "Fórmula importada y sellada de fábrica", "Resultados perceptibles en 3 a 4 semanas"],
       "visual": "kids",
       "tone": "cream",
-      "image": "",
+      "image": "imgProductos/vitaminaL'ilCrittersPawPatrol.jpeg",
       "active": true,
       "featured": false,
       "createdAt": "2026-07-28T10:00:00.000Z"
@@ -640,7 +640,7 @@
       "bullets": ["Fórmula importada y sellada de fábrica", "Resultados perceptibles en 3 a 4 semanas", "Dosis clínicamente respaldada por porción"],
       "visual": "softgel",
       "tone": "wine",
-      "image": "",
+      "image": "imgProductos/resveratrolDrMartinNutrition.jpeg",
       "active": true,
       "featured": false,
       "createdAt": "2026-08-14T10:00:00.000Z"
